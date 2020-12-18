@@ -1,4 +1,5 @@
 import Addition from './Components/Addition'
+import Subtraction from './Components/Subtraction'
 import SubtractionData from './data/subtraction.json'
 import AdditionData from './data/additon.json'
 
@@ -19,8 +20,8 @@ function App() {
   })
   return (
     <div className="App">
-      {/* {subtractionList}
-      {additionList} */}
+      {subtractionList}
+      {additionList}
       <Addition />
 
     </div>
