@@ -1,7 +1,9 @@
-import Addition from './Components/Addition'
-import Subtraction from './Components/Subtraction'
-import SubtractionData from './data/subtraction.json'
-import AdditionData from './data/additon.json'
+import Addition from "./Components/Addition";
+import Division from "./Components/Division";
+import Subtraction from "./Components/Subtraction";
+import SubtractionData from "./data/subtraction.json";
+import AdditionData from "./data/additon.json";
+import DivisionData from "./data/division.json";
 
 import "./App.css";
 
