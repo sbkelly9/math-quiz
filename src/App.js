@@ -4,7 +4,6 @@ import Subtraction from "./Components/Subtraction";
 import SubtractionData from "./data/subtraction.json";
 import AdditionData from "./data/additon.json";
 import DivisionData from "./data/division.json";
-
 import "./App.css";
 
 function App() {
