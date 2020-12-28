@@ -1,8 +1,8 @@
 import Addition from "./Components/Addition";
-import Division from "./Components/Division";
 import Subtraction from "./Components/Subtraction";
 import SubtractionData from "./data/subtraction.json";
 import AdditionData from "./data/additon.json";
+import Division from "./Components/Division";
 import DivisionData from "./data/division.json";
 import "./App.css";
 
@@ -36,6 +36,7 @@ function App() {
     <div className="App">
       {subtractionList}
       {additionList}
+      {divisionList}
       <Addition />
       <Division />
     </div>
