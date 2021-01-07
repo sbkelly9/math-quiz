@@ -1,9 +1,12 @@
+import React, { Component } from "react";
+import { Route, Link } from "react-router-dom";
 import Addition from "./Components/Addition";
 import Subtraction from "./Components/Subtraction";
 import SubtractionData from "./data/subtraction.json";
 import AdditionData from "./data/additon.json";
 import Division from "./Components/Division";
 import DivisionData from "./data/division.json";
+//import Navbar from "./Navbar";
 
 import "./App.css";
 
