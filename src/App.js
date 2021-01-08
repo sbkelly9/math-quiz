@@ -7,17 +7,18 @@ import SubtractionData from "./data/subtraction.json";
 import AdditionData from "./data/additon.json";
 import Division from "./Components/Division";
 import DivisionData from "./data/division.json";
+import Home from "./Components/Home";
 import "./App.css";
 
 function App() {
-  let subtractionList = SubtractionData.map((dataset, i) => {
-    return (
-      <div key={i}>
-        <p>{dataset.problem}</p>
-        <p>{dataset.answer}</p>
-      </div>
-    );
-  });
+  //   let subtractionList = SubtractionData.map((dataset, i) => {
+  //     return (
+  //       <div key={i}>
+  //         <p>{dataset.problem}</p>
+  //         <p>{dataset.answer}</p>
+  //       </div>
+  //     );
+  //   });
   // let additionList = AdditionData.map((dataset, i) => {
   //   return (
   //     <div key={i}>
@@ -38,11 +39,9 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <Link to="/">
-          {subtractionList}
+        <Link to="/subtraction">
           <h1>Subtraction Test</h1>
         </Link>
-        <Link to="/addition" />
       </nav>
       <main>
         {/* <Route path="/addition"
