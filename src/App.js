@@ -10,39 +10,17 @@ import Home from "./Components/Home";
 import "./App.css";
 
 function App() {
-  let subtractionList = SubtractionData.map((dataset, i) => {
-    return (
-      <div key={i}>
-        <p>{dataset.problem}</p>
-        <p>{dataset.answer}</p>
-      </div>
-    );
-  });
-  // let additionList = AdditionData.map((dataset, i) => {
-  //   return (
-  //     <div key={i}>
-  //       <p>{dataset.problem}</p>
-  //       <p>{dataset.answer}</p>
-  //     </div>
-  //   );
-  // });
-  // let divisionList = DivisionData.map((dataset, i) => {
-  //   return (
-  //     <div key={i}>
-  //       <p>{dataset.problem}</p>
-  //       <p>{dataset.answer}</p>
-  //     </div>
-  // );
-  // });
+
 
   return (
     <div className="App">
       <nav>
-        <Link to="/">
-          {subtractionList}
+        <Link to ="/addition">
+          <h1>Addition Test</h1>
+        </Link>
+        <Link to="/subtraction">
           <h1>Subtraction Test</h1>
-          </Link>
-        <Link to="/addition" />
+        </Link>
       </nav>
       <main>
         <Route path="/" exact component={Home} />
