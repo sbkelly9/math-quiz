@@ -1,4 +1,6 @@
+import { MuiThemeProvider } from "@material-ui/core";
 import React, { Component } from "react";
+import MathClass from '../mathClass/MathClass'
 // import SubtractionData from '../data/subtraction.json'
 // import AdditionData from '../data/additon.json'
 
@@ -8,37 +10,22 @@ class Division extends Component {
     this.state = {
       question: "",
       answer: "",
+      operator: '/',
     };
   }
 
-  creatDivisionQuestions = () => {
-    // Create two random numbers between 0-100
-    let randomNumber1 = Math.floor(Math.random() * 100);
-    let randomNumber2 = Math.floor(Math.random() * 100);
-
-    console.log(randomNumber1);
-    console.log(randomNumber2);
-
-    // Create a question that ask them to add the two numbers together
-    let generatedQuestion = `What is ${randomNumber1} / ${randomNumber2}`;
-    console.log(generatedQuestion);
-
-    // Also want to provide the answer
-    let generatedAnswer = randomNumber1 + randomNumber2;
-    console.log(generatedAnswer);
-
-    this.setState({
-      question: generatedQuestion,
-      answer: generatedAnswer,
-    });
-  };
-
   componentDidMount() {
-    this.creatDivisionQuestions();
+    // this.creatDivisionQuestions();
+    // let something = MathClass
+
   }
 
   render() {
-    console.log(this.state);
+    // let listOptions = this.state.choices.map(choice => <button onClick={checkIfItIsCorrectChoice}>{choice}</button>)
+
+    console.log(MathClass.checkToSeeIfFirstNumberIsSmallerThanSecond('+'))
+
+    // console.log(this.state);
     return (
       <div>
         <p>{this.state.question}</p>
