@@ -26,7 +26,6 @@ class Multiplication extends Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <div>
                 <DisplayQuestion choices={this.state.choices} question={this.state.question} handleClick={MathClass.handleClick} />

@@ -27,14 +27,14 @@ class MathClass {
 
             this.performMathEquation(this.numberToUse1, this.numberToUse2, operator)
 
-            console.log(this.numberToUse1, this.numberToUse2)
+            // console.log(this.numberToUse1, this.numberToUse2)
             return (this.numberToUse1, this.numberToUse2)
         } else {
             this.numberToUse1 = this.randomNumber1
             this.numberToUse2 = this.randomNumber2
 
             this.performMathEquation(this.numberToUse1, this.numberToUse2, operator)
-            console.log(this.numberToUse1, this.numberToUse2)
+            // console.log(this.numberToUse1, this.numberToUse2)
 
             return (this.numberToUse1, this.numberToUse2)
         }
@@ -76,8 +76,6 @@ class MathClass {
         // console.log(e)
         let userChoice = e.target.innerHTML
         let { option3 } = this.options
-        console.log(userChoice)
-        console.log(option3)
         userChoice == option3 ? console.log('correct!!') : console.log('Wrong!')
     }
 }
