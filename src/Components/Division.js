@@ -1,36 +1,35 @@
-import { MuiThemeProvider } from "@material-ui/core";
 import React, { Component } from "react";
-import MathClass from '../mathClass/MathClass'
-// import SubtractionData from '../data/subtraction.json'
-// import AdditionData from '../data/additon.json'
+import MathClass from '../MathClass/MathClass'
+import DisplayQuestion from './DisplayQuestion'
 
 class Division extends Component {
   constructor() {
     super();
     this.state = {
-      question: "",
-      answer: "",
+      question: '',
       operator: '/',
+      correctChoice: null,
+      choices: []
     };
   }
 
+
   componentDidMount() {
-    // this.creatDivisionQuestions();
-    // let something = MathClass
+    MathClass.checkToSeeIfFirstNumberIsSmallerThanSecond(this.state.operator)
+
+    this.setState({
+      choices: MathClass.choices,
+      correctChoice: MathClass.options.option3,
+      question: `${MathClass.numberToUse1} ${this.state.operator} ${MathClass.numberToUse2}`
+    })
 
   }
 
   render() {
-    // let listOptions = this.state.choices.map(choice => <button onClick={checkIfItIsCorrectChoice}>{choice}</button>)
-
-    console.log(MathClass.checkToSeeIfFirstNumberIsSmallerThanSecond('+'))
-
-    // console.log(this.state);
+    console.log(this.state)
     return (
       <div>
-        <p>{this.state.question}</p>
-        <button>Check Answer</button>
-        <button>Next</button>
+        <DisplayQuestion choices={this.state.choices} question={this.state.question} handleClick={MathClass.handleClick} />
       </div>
     );
   }

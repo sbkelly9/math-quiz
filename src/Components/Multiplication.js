@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import MathClass from '../MathClass/MathClass'
 import DisplayQuestion from './DisplayQuestion'
 
-class Addition extends Component {
+class Multiplication extends Component {
     constructor() {
         super();
         this.state = {
             question: '',
-            operator: '+',
+            operator: '*',
             correctChoice: null,
             choices: []
         };
@@ -35,4 +35,4 @@ class Addition extends Component {
     }
 }
 
-export default Addition;
+export default Multiplication;

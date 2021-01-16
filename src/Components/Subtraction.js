@@ -1,68 +1,38 @@
 import React, { Component } from "react";
-// import SubtractionData from "../data/subtraction.json";
+import MathClass from '../MathClass/MathClass'
+import DisplayQuestion from './DisplayQuestion'
 
 class Subtraction extends Component {
   constructor() {
     super();
     this.state = {
-      question: "",
-      answer: "",
+      question: '',
+      operator: '-',
+      correctChoice: null,
+      choices: []
     };
   }
 
 
-  creatSubtractionQuestions = () => {
-    // Create two random numbers between 0-100
-    let randomNumber1 = Math.floor(Math.random() * 100);
-    let randomNumber2 = Math.floor(Math.random() * 100);
-
-    console.log(randomNumber1)
-    console.log(randomNumber2)
-
-    // Create a question that ask them to add the two numbers together
-    let generatedQuestion = `What is ${randomNumber1} - ${randomNumber2}`
-    console.log(generatedQuestion)
-
-    if (randomNumber1 > randomNumber2) {
-        var outcome = generatedQuestion;
-  } 
-  
-// //   else {
-// // //         var outcome = else block;
-// // //   }
-//   outcome;
-
-    // Also want to provide the answer
-    let generatedAnswer = randomNumber1 - randomNumber2
-    console.log(generatedAnswer)
-
+  componentDidMount() {
+    MathClass.checkToSeeIfFirstNumberIsSmallerThanSecond(this.state.operator)
 
     this.setState({
-        question: generatedQuestion,
-        answer: generatedAnswer
+      choices: MathClass.choices,
+      correctChoice: MathClass.options.option3,
+      question: `${MathClass.numberToUse1} ${this.state.operator} ${MathClass.numberToUse2}`
     })
 
-}
+  }
 
-componentDidMount() {
-    this.creatSubtractionQuestions()
-
-   }
-
-
-
-
-   render() {
+  render() {
     console.log(this.state)
     return (
-        <div>
-            <p>{this.state.question}</p>
-            <button>Check Answer</button>
-            <button>Next</button>
-        </div>
+      <div>
+        <DisplayQuestion choices={this.state.choices} question={this.state.question} handleClick={MathClass.handleClick} />
+      </div>
     );
+  }
 }
-}
-
 
 export default Subtraction;
