@@ -73,10 +73,9 @@ class MathClass {
     }
 
     handleClick = (e) => {
-        // console.log(e)
         let userChoice = e.target.innerHTML
         let { option3 } = this.options
-        userChoice == option3 ? console.log('correct!!') : console.log('Wrong!')
+        toString(userChoice) === toString(option3) ? console.log('correct!!') : console.log('Wrong!')
     }
 }
 

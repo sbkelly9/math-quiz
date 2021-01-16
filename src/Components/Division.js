@@ -17,10 +17,11 @@ class Division extends Component {
   componentDidMount() {
     MathClass.checkToSeeIfFirstNumberIsSmallerThanSecond(this.state.operator)
 
+    let { operator } = this.state
     this.setState({
       choices: MathClass.choices,
       correctChoice: MathClass.options.option3,
-      question: `${MathClass.numberToUse1} ${this.state.operator} ${MathClass.numberToUse2}`
+      question: `${MathClass.numberToUse1} ${operator} ${MathClass.numberToUse2}`
     })
 
   }
