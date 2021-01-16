@@ -20,36 +20,38 @@ class MathClass {
     }
 
     checkToSeeIfFirstNumberIsSmallerThanSecond = (operator) => {
-        // console.log(a, b)
         if (this.randomNumber2 > this.randomNumber1) {
             this.numberToUse1 = this.randomNumber2
             this.numberToUse2 = this.randomNumber1
 
             this.performMathEquation(this.numberToUse1, this.numberToUse2, operator)
 
-            // console.log(this.numberToUse1, this.numberToUse2)
             return (this.numberToUse1, this.numberToUse2)
         } else {
             this.numberToUse1 = this.randomNumber1
             this.numberToUse2 = this.randomNumber2
 
             this.performMathEquation(this.numberToUse1, this.numberToUse2, operator)
-            // console.log(this.numberToUse1, this.numberToUse2)
 
             return (this.numberToUse1, this.numberToUse2)
         }
     }
 
     performMathEquation = (num1, num2, sign) => {
-        var sum = this.operatorFunctions[sign](num1, num2);
-        this.options.option3 = Math.round((sum + Number.EPSILON) * 100) / 100
-        // console.log(this.options)
-        let { option1, option2, option3, option4 } = this.options
+        var sum = this.operatorFunctions[sign](num1, num2)
 
+        this.options.option3 = Math.round((sum + Number.EPSILON) * 100) / 100
+
+        this.createOptionsArray()
+        return this.options;
+    }
+
+    createOptionsArray = () => {
+        let { option1, option2, option3, option4 } = this.options
         let arrayOfOptions = [option1, option2, option3, option4]
+
         this.shuffleChoices(arrayOfOptions)
 
-        return this.options;
     }
 
     shuffleChoices = (array) => {
@@ -75,7 +77,9 @@ class MathClass {
     handleClick = (e) => {
         let userChoice = e.target.innerHTML
         let { option3 } = this.options
-        toString(userChoice) === toString(option3) ? console.log('correct!!') : console.log('Wrong!')
+        // console.log(userChoice)
+        // console.log(option3)
+        userChoice == option3 ? console.log('correct!!') : console.log('Wrong!')
     }
 }
 
